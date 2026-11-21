@@ -1,0 +1,22 @@
+[
+  {
+    "name": "FEU Tech ACM Student Chapter",
+    "category": "Technology",
+    "iconName": "laptopcomputer"
+  },
+  {
+    "name": "Junior Philippine Computer Society",
+    "category": "Academic",
+    "iconName": "chevron.left.forwardslash.chevron.right"
+  },
+  {
+    "name": "FEU Tech Music Circle",
+    "category": "Arts and Culture",
+    "iconName": "music.note"
+  },
+  {
+    "name": "FEU Tech Tamaraw Volunteers",
+    "category": "Community Service",
+    "iconName": "hands.sparkles.fill"
+  }
+]

@@ -1,8 +1,20 @@
 import UIKit
+import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "ClubConnect")
+        container.loadPersistentStores { _, error in
+            if let error {
+                // A failed store should be visible during development instead of silently losing club data.
+                print("Core Data store failed to load: \(error.localizedDescription)")
+            }
+        }
+        return container
+    }()
 
     func application(
         _ application: UIApplication,
@@ -21,5 +33,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBar.tintColor = .white
 
         return true
+    }
+
+    func saveContext() {
+        let context = persistentContainer.viewContext
+        guard context.hasChanges else { return }
+
+        do {
+            try context.save()
+        } catch {
+            print("Core Data save failed: \(error.localizedDescription)")
+        }
     }
 }
